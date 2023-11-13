@@ -8,25 +8,19 @@ group = "com.nguylinc"
 version = "0.1.0"
 
 repositories {
-    mavenCentral()
     maven {
-        name = "GitHubPackages"
-        url = uri("https://maven.pkg.github.com/rinkaaan/ImportablePackage")
+        url = uri("https://nguylinc-542773719222.d.codeartifact.us-east-1.amazonaws.com/maven/maven-central-store/")
         credentials {
-            username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
-            password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
-        }
-        metadataSources {
-            mavenPom()
-            artifact()
+            username = "aws"
+            password = project.property("codeartifact.auth_token").toString()
         }
     }
 }
 
 dependencies {
     testImplementation(kotlin("test"))
+    // implementation("com.nguylinc:importable-package:0.1.0")
     implementation(files("../ImportablePackage/build/libs/importablepackage-0.1.0.jar"))
-    // implementation("com.nguylinc:importablepackage:0.1.2")
 }
 
 tasks.test {

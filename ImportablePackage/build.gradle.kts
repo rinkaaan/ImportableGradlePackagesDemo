@@ -14,20 +14,19 @@ repositories {
 }
 
 publishing {
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/rinkaaan/ImportablePackage")
-            credentials {
-                username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
-                password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
-            }
+    publications {
+        create<MavenPublication>("mavenJava") {
+            artifactId = "importable-package"
+            from(components["java"])
         }
     }
-    publications {
-        register<MavenPublication>("gpr") {
-            from(components["java"])
-            artifactId = "importablepackage"
+    repositories {
+        maven {
+            url = uri("https://nguylinc-542773719222.d.codeartifact.us-east-1.amazonaws.com/maven/maven-central-store/")
+            credentials {
+                username = "aws"
+                password = project.property("codeartifact.auth_token").toString()
+            }
         }
     }
 }
