@@ -3,7 +3,7 @@
 ## Setup
 
 1. Set up importing and dependent packages in same directory.
-2. Update importing package's package.json to include the dependent package as a dependency. Include both local path and namespace:version but use only one while leaving the other commented out. Also set up GitHub Gradle registry and update gradle.properties to include `gpr.user` and `gpr.key`.
+2. Update importing package's package.json to include the dependent package as a dependency. Include both local path and namespace:version but use only one while leaving the other commented out. Also set up GitHub Gradle registry and update gradle.properties to include `gpr.user` and `gpr.key` (relevant docs are [here](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-gradle-registry#using-a-published-package)).
 3. Publish imported package to GitHub Gradle registry by running `./gradlew publish`. This pushes the built JAR to e.g. `https://maven.pkg.github.com/rinkaaan/ImportablePackage/com/nguylinc/importablepackage/0.1.0/importablepackage-0.1.0.jar`.
 4. Run `./gradlew build` in the importing package.
 
