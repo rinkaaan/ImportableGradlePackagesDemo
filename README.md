@@ -2,7 +2,7 @@
 
 ## Setup
 
-1. Configure gradle to use AWS CodeArtifact repository using `aws codeartifact get-authorization-token`. Relevant documentation [here](https://docs.aws.amazon.com/codeartifact/latest/ug/maven-gradle.html).
+1. Configure gradle to use AWS CodeArtifact repository using `aws codeartifact get-authorization-token --domain nguylinc`. Relevant documentation [here](https://docs.aws.amazon.com/codeartifact/latest/ug/maven-gradle.html).
 2. Set up importing and dependent packages in same directory.
 3. Update gradle.properties to include `codeartifact.auth_token`.
 4. Publish imported package to CodeArtifact repository by running `./gradlew publish`.

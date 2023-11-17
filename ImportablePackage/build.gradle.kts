@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.pm20.util.archivesName
+
 plugins {
     kotlin("jvm") version "1.9.20"
     // id("pl.allegro.tech.build.axion-release") version "1.15.5"
@@ -8,6 +10,7 @@ plugins {
 group = "com.nguylinc"
 // version = scmVersion.version
 version = "0.1.0"
+project.archivesName.set("importablepackage")
 
 repositories {
     mavenCentral()

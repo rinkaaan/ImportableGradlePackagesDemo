@@ -8,6 +8,7 @@ group = "com.nguylinc"
 version = "0.1.0"
 
 repositories {
+    mavenCentral()
     maven {
         url = uri("https://nguylinc-542773719222.d.codeartifact.us-east-1.amazonaws.com/maven/maven-central-store/")
         credentials {
